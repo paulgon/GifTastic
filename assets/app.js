@@ -1,5 +1,6 @@
 var bands = ['pearl jam', 'dave matthews band', 'led zeppelin'];
 
+
 function buttonCreation() {
     $('#buttons-place').empty();
 
@@ -11,7 +12,9 @@ function buttonCreation() {
         $('#buttons-place').append(button);
     }
 }
-buttonCreation();
+// buttonCreation();
+
+// $('#new').addClass('newBtn')
 
 $('#myform').on('submit', function (event) {
     event.preventDefault();
@@ -22,7 +25,13 @@ $('#myform').on('submit', function (event) {
     buttonCreation();
 });
 
-$('.btn').on('click', function () {
+buttonCreation();
+
+//please clarify why we use document.onclick and the function of lines 31-33
+$(document).on('click','.btn', function () {
+    $(".btn").removeClass("active");
+    $(this).addClass("active");
+
     var band = $(this).attr('data-btn');
     console.log(band);
     var url =
@@ -37,5 +46,6 @@ $('.btn').on('click', function () {
         console.log(response);
     });
 });
+
 
 //functions anonymus functions  // callback
