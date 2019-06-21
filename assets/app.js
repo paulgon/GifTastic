@@ -48,4 +48,3 @@ $(document).on('click','.btn', function () {
 });
 
 
-//functions anonymus functions  // callback
